@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
+import javax.swing.JButton;
 
 public class foodGUI {
 
@@ -46,6 +47,9 @@ public class foodGUI {
 		txtTest.setText("Test");
 		frame.getContentPane().add(txtTest, BorderLayout.NORTH);
 		txtTest.setColumns(10);
+		
+		JButton btnButton = new JButton("button");
+		frame.getContentPane().add(btnButton, BorderLayout.CENTER);
 	}
 
 }
