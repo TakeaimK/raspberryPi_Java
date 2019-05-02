@@ -3,10 +3,13 @@ package raspberryPi_GUI;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
 
 public class foodGUI {
 
 	private JFrame frame;
+	private JTextField txtTest;
 
 	/**
 	 * Launch the application.
@@ -38,6 +41,11 @@ public class foodGUI {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		txtTest = new JTextField();
+		txtTest.setText("Test");
+		frame.getContentPane().add(txtTest, BorderLayout.NORTH);
+		txtTest.setColumns(10);
 	}
 
 }
