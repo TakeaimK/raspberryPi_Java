@@ -13,10 +13,15 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.JSplitPane;
+import javax.swing.JToolBar;
+import java.awt.SystemColor;
+import javax.swing.JTable;
 
 public class foodGUI {
 
 	private JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -46,63 +51,77 @@ public class foodGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(188, 143, 143));
-		frame.setBounds(100, 100, 1000, 500);
+		frame.getContentPane().setForeground(new Color(255, 255, 255));
+		frame.getContentPane().setBackground(new Color(255, 250, 205));
+		frame.setBounds(100, 100, 805, 487);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton button1 = new JButton("Button1");
+		button1.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
+		button1.setBackground(new Color(255, 255, 224));
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		button1.setBounds(45, 70, 197, 115);
+		button1.setBounds(40, 70, 129, 132);
 		frame.getContentPane().add(button1);
 		
 		JButton button2 = new JButton("Button2");
+		button2.setBackground(new Color(255, 255, 224));
+		button2.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		button2.setBounds(292, 70, 197, 115);
+		button2.setBounds(181, 70, 129, 132);
 		frame.getContentPane().add(button2);
 		
 		JButton button3 = new JButton("Button3");
+		button3.setBackground(new Color(255, 255, 224));
+		button3.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		button3.setBounds(544, 70, 197, 115);
+		button3.setBounds(322, 70, 129, 132);
 		frame.getContentPane().add(button3);
 		
 		JButton button4 = new JButton("Button4");
+		button4.setBackground(new Color(255, 255, 224));
+		button4.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		button4.setBounds(45, 222, 197, 115);
+		button4.setBounds(40, 212, 129, 132);
 		frame.getContentPane().add(button4);
 		
 		JButton button5 = new JButton("Button5");
+		button5.setBackground(new Color(255, 255, 224));
+		button5.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		button5.setBounds(292, 222, 197, 115);
+		button5.setBounds(181, 212, 129, 132);
 		frame.getContentPane().add(button5);
 		
 		JButton button6 = new JButton("Button6");
+		button6.setBackground(new Color(255, 255, 224));
+		button6.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		button6.setBounds(544, 222, 197, 115);
+		button6.setBounds(322, 212, 129, 132);
 		frame.getContentPane().add(button6);
 		
 		JLabel lblWelcomeToThe = new JLabel("Welcome to the Susi Nara!");
+		lblWelcomeToThe.setForeground(new Color(0, 0, 0));
 		lblWelcomeToThe.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 47));
 		lblWelcomeToThe.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWelcomeToThe.setBounds(129, 10, 544, 50);
+		lblWelcomeToThe.setBounds(12, 9, 544, 50);
 		frame.getContentPane().add(lblWelcomeToThe);
 		
 		JLabel payment = new JLabel("Advertisement");
@@ -110,33 +129,79 @@ public class foodGUI {
 		payment.setForeground(new Color(255, 0, 0));
 		payment.setFont(new Font("aÀüÀÚ½Ã°è", Font.PLAIN, 17));
 		payment.setHorizontalAlignment(SwingConstants.CENTER);
-		payment.setBounds(764, 40, 183, 356);
+		payment.setBounds(572, 337, 189, 103);
 		frame.getContentPane().add(payment);
 		
 		JLabel lblUser = new JLabel("User 1 : ");
+		lblUser.setForeground(new Color(0, 0, 0));
 		lblUser.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUser.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 47));
-		lblUser.setBounds(92, 382, 174, 50);
+		lblUser.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
+		lblUser.setBounds(294, 375, 120, 42);
 		frame.getContentPane().add(lblUser);
 		
 		JLabel label = new JLabel("13,000");
+		label.setForeground(new Color(0, 0, 0));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 47));
-		label.setBounds(225, 382, 129, 50);
+		label.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
+		label.setBounds(378, 375, 152, 42);
 		frame.getContentPane().add(label);
 		
 		JLabel label_1 = new JLabel("\\");
+		label_1.setForeground(new Color(0, 0, 0));
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 47));
-		label_1.setBounds(340, 382, 55, 50);
+		label_1.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
+		label_1.setBounds(493, 375, 37, 42);
 		frame.getContentPane().add(label_1);
 		
 		JButton Payment = new JButton("ÁÖ¹®ÇÏ±â");
+		Payment.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		Payment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		Payment.setBounds(750, 360, 197, 72);
+		Payment.setBounds(572, 288, 189, 42);
 		frame.getContentPane().add(Payment);
+		
+		JButton button7 = new JButton("<-");
+		button7.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 24));
+		button7.setForeground(new Color(100, 149, 237));
+		button7.setBackground(new Color(100, 149, 237));
+		button7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		button7.setBounds(571, 18, 91, 30);
+		frame.getContentPane().add(button7);
+		
+		JButton button8 = new JButton("->");
+		button8.setForeground(new Color(255, 69, 0));
+		button8.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 23));
+		button8.setBackground(new Color(255, 69, 0));
+		button8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		button8.setBounds(667, 18, 91, 30);
+		frame.getContentPane().add(button8);
+		
+		JButton button9 = new JButton("ÁÖ¹®»óÅÂ");
+		button9.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 12));
+		button9.setBounds(11, 358, 71, 74);
+		frame.getContentPane().add(button9);
+		
+		JButton button10 = new JButton("°áÁ¦");
+		button10.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 12));
+		button10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		button10.setBounds(83, 358, 74, 74);
+		frame.getContentPane().add(button10);
+		
+		table = new JTable();
+		table.setColumnSelectionAllowed(true);
+		table.setCellSelectionEnabled(true);
+		table.setBounds(572, 70, 189, 208);
+		frame.getContentPane().add(table);
 	}
 }
