@@ -53,7 +53,7 @@ public class foodGUI {
 		frame = new JFrame();
 		frame.getContentPane().setForeground(new Color(255, 255, 255));
 		frame.getContentPane().setBackground(new Color(255, 250, 205));
-		frame.setBounds(100, 100, 805, 487);
+		frame.setBounds(100, 100, 764, 487);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -121,7 +121,7 @@ public class foodGUI {
 		lblWelcomeToThe.setForeground(new Color(0, 0, 0));
 		lblWelcomeToThe.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 47));
 		lblWelcomeToThe.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWelcomeToThe.setBounds(12, 9, 544, 50);
+		lblWelcomeToThe.setBounds(12, 11, 508, 50);
 		frame.getContentPane().add(lblWelcomeToThe);
 		
 		JLabel payment = new JLabel("Advertisement");
@@ -129,28 +129,28 @@ public class foodGUI {
 		payment.setForeground(new Color(255, 0, 0));
 		payment.setFont(new Font("aÀüÀÚ½Ã°è", Font.PLAIN, 17));
 		payment.setHorizontalAlignment(SwingConstants.CENTER);
-		payment.setBounds(572, 337, 189, 103);
+		payment.setBounds(513, 337, 189, 103);
 		frame.getContentPane().add(payment);
 		
 		JLabel lblUser = new JLabel("User 1 : ");
 		lblUser.setForeground(new Color(0, 0, 0));
 		lblUser.setHorizontalAlignment(SwingConstants.CENTER);
 		lblUser.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
-		lblUser.setBounds(294, 375, 120, 42);
+		lblUser.setBounds(222, 373, 120, 42);
 		frame.getContentPane().add(lblUser);
 		
 		JLabel label = new JLabel("13,000");
 		label.setForeground(new Color(0, 0, 0));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
-		label.setBounds(378, 375, 152, 42);
+		label.setBounds(306, 373, 152, 42);
 		frame.getContentPane().add(label);
 		
 		JLabel label_1 = new JLabel("\\");
 		label_1.setForeground(new Color(0, 0, 0));
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
-		label_1.setBounds(493, 375, 37, 42);
+		label_1.setBounds(445, 373, 37, 42);
 		frame.getContentPane().add(label_1);
 		
 		JButton Payment = new JButton("ÁÖ¹®ÇÏ±â");
@@ -159,7 +159,7 @@ public class foodGUI {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		Payment.setBounds(572, 288, 189, 42);
+		Payment.setBounds(513, 285, 189, 42);
 		frame.getContentPane().add(Payment);
 		
 		JButton button7 = new JButton("<-");
@@ -170,7 +170,7 @@ public class foodGUI {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		button7.setBounds(571, 18, 91, 30);
+		button7.setBounds(513, 29, 91, 30);
 		frame.getContentPane().add(button7);
 		
 		JButton button8 = new JButton("->");
@@ -181,7 +181,7 @@ public class foodGUI {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		button8.setBounds(667, 18, 91, 30);
+		button8.setBounds(609, 29, 91, 30);
 		frame.getContentPane().add(button8);
 		
 		JButton button9 = new JButton("ÁÖ¹®»óÅÂ");
@@ -201,7 +201,7 @@ public class foodGUI {
 		table = new JTable();
 		table.setColumnSelectionAllowed(true);
 		table.setCellSelectionEnabled(true);
-		table.setBounds(572, 70, 189, 208);
+		table.setBounds(513, 70, 189, 208);
 		frame.getContentPane().add(table);
 	}
 }
