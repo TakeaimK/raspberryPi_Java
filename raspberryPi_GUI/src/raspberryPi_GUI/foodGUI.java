@@ -26,7 +26,7 @@ public class foodGUI {
         // 디자인단
         // 프레임 설정단
         JFrame frame = new JFrame("햄버거 자동 판매기");
-        frame.setBounds(0, 0, 625, 1000);
+        frame.setBounds(0, 0, 764, 487);
         frame.setBackground(Color.black);
  
         // 폰트
@@ -97,74 +97,78 @@ public class foodGUI {
             pNorth.add(ok[i]);
         }
  
-        // 중앙
-        TextArea ta = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-        ta.setText("   상품명        단가        수량        합계\n\n");
-        ta.setBackground(Color.white);
-        ta.setEditable(false);
-        ta.setFont(font1);
- 
         // 남쪽
         Panel pSouth = new Panel();
         pSouth.setFont(font);
         pSouth.setBackground(new Color(255, 255, 215));
  
-        Button bt1 = new Button("주문");
-        Button bt2 = new Button("초기화");
-        Button bt3 = new Button("닫기");
-        pSouth.add(bt1);
-        pSouth.add(bt2);
-        pSouth.add(bt3);
- 
-        // 주문버튼
-        bt1.addActionListener(new ActionListener() {
- 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, ta.getText() + " 주문되었습니다. \n이용해주셔서 감사합니다.");
-                for (int i = 0; i < menu.length; i++) {
-                    bt[i].setEnabled(true);
-                    minus[i].setEnabled(false);
-                    plus[i].setEnabled(false);
-                    suja[i].setText("0");
-                    ta.setText("   상품명        단가        수량        합계\n\n");
- 
-                }
-            }
-        });
- 
-        // 초기화 버튼
-        bt2.addActionListener(new ActionListener() {
- 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for (int i = 0; i < menu.length; i++) {
-                    bt[i].setEnabled(true);
-                    minus[i].setEnabled(false);
-                    plus[i].setEnabled(false);
-                    suja[i].setText("0");
-                    ta.setText("   상품명        단가        수량        합계\n\n");
- 
-                }
-            }
-        });
- 
- 
-        //bt3 닫기버튼
-        
-        bt3.addActionListener(new ActionListener() {
-            
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
- 
  
         // 컴포넌트
-        frame.add(pNorth, BorderLayout.NORTH);
-        frame.add(ta, BorderLayout.CENTER);
-        frame.add(pSouth, BorderLayout.SOUTH);
+        frame.getContentPane().add(pNorth, BorderLayout.NORTH);
+        
+               // 중앙
+               TextArea ta = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
+               ta.setBounds(504, 22, 236, 250);
+               pNorth.add(ta);
+               ta.setText(" 상품명  수량   합계\r\n\r\n");
+               ta.setBackground(Color.white);
+               ta.setEditable(false);
+               ta.setFont(new Font("Monospaced", Font.BOLD, 17));
+               
+                      Button bt1 = new Button("주문");
+                      bt1.setBounds(187, 366, 51, 30);
+                      pNorth.add(bt1);
+                      Button bt2 = new Button("초기화");
+                      bt2.setBounds(271, 366, 69, 30);
+                      pNorth.add(bt2);
+                      Button bt3 = new Button("닫기");
+                      bt3.setBounds(352, 366, 51, 30);
+                      pNorth.add(bt3);
+                      
+                      
+                             //bt3 닫기버튼
+                             
+                             bt3.addActionListener(new ActionListener() {
+                                 
+                                 @Override
+                                 public void actionPerformed(ActionEvent e) {
+                                     System.exit(0);
+                                 }
+                             });
+                      
+                             // 초기화 버튼
+                             bt2.addActionListener(new ActionListener() {
+                      
+                                 @Override
+                                 public void actionPerformed(ActionEvent e) {
+                                     for (int i = 0; i < menu.length; i++) {
+                                         bt[i].setEnabled(true);
+                                         minus[i].setEnabled(false);
+                                         plus[i].setEnabled(false);
+                                         suja[i].setText("0");
+                                         ta.setText(" 상품명    수량    합계\n\n");
+                      
+                                     }
+                                 }
+                             });
+                      
+                             // 주문버튼
+                             bt1.addActionListener(new ActionListener() {
+                      
+                                 @Override
+                                 public void actionPerformed(ActionEvent e) {
+                                     JOptionPane.showMessageDialog(null, ta.getText() + " 주문되었습니다. \n이용해주셔서 감사합니다.");
+                                     for (int i = 0; i < menu.length; i++) {
+                                         bt[i].setEnabled(true);
+                                         minus[i].setEnabled(false);
+                                         plus[i].setEnabled(false);
+                                         suja[i].setText("0");
+                                         ta.setText(" 상품명    수량    합계\n\n");
+                      
+                                     }
+                                 }
+                             });
+        frame.getContentPane().add(pSouth, BorderLayout.SOUTH);
         frame.setVisible(true);
  
         // 이벤트단
@@ -219,8 +223,7 @@ public class foodGUI {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     show = bt[j].getActionCommand();
-                    ta.append("   " + show + "       " + price[j] + "        " + count + "         " + price[j] * count
-                            + "원" + "\n");
+                    ta.append(" " + show + "  " + price[j] + "  " + count + " " + price[j] * count+ "원" + "\n");
                     ok[j].setEnabled(false);
                 }
             });
