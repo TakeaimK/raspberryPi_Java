@@ -30,8 +30,8 @@ public class foodGUI {
         frame.setBackground(Color.black);
  
         // 폰트
-        Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 18);
-        Font font1 = new Font(Font.MONOSPACED, Font.BOLD, 22);
+        Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 15);
+        Font font1 = new Font(Font.MONOSPACED, Font.BOLD, 20);
  
         // 북쪽
         Panel pNorth = new Panel();
@@ -41,8 +41,8 @@ public class foodGUI {
         pNorth.setFont(font);
  
         // 배열 설정 부분
-        String menu[] = { "빅맥버거", "싸이버거", "더블버거", "맘마버거", "김치버거", "새우버거", "라면버거", "치킨버거" };
-        int price[] = { 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500 };
+        String menu[] = { "빅맥버거", "싸이버거", "더블버거", "맘마버거", "김치버거", "새우버거"};
+        int price[] = { 5000, 5500, 6000, 6500, 7000, 7500};
         JButton bt[] = new JButton[menu.length];
         TextField suja[] = new TextField[menu.length];
         Button minus[] = new Button[menu.length];
@@ -56,10 +56,10 @@ public class foodGUI {
  
             // 햄버거 버튼
             bt[i] = new JButton(menu[i]);
-            if (i < 4) {
+            if (i < 3) {
                 bt[i].setBounds(25 + i * 150, 50, 100, 100);
             } else {
-                bt[i].setBounds(25 + (i - 4) * 150, 300, 100, 100);
+                bt[i].setBounds(25 + (i -3) * 150, 300, 100, 100);
             }
             icon[i] = new ImageIcon(i + ".png");
             bt[i].setIcon(icon[i]);
@@ -108,21 +108,21 @@ public class foodGUI {
         
                // 중앙
                TextArea ta = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-               ta.setBounds(504, 22, 236, 250);
+               ta.setBounds(502, 28, 225, 250);
                pNorth.add(ta);
                ta.setText(" 상품명  수량   합계\r\n\r\n");
                ta.setBackground(Color.white);
                ta.setEditable(false);
-               ta.setFont(new Font("Monospaced", Font.BOLD, 17));
+               ta.setFont(new Font("Monospaced", Font.BOLD, 15));
                
                       Button bt1 = new Button("주문");
-                      bt1.setBounds(187, 366, 51, 30);
+                      bt1.setBounds(502, 351, 51, 30);
                       pNorth.add(bt1);
                       Button bt2 = new Button("초기화");
-                      bt2.setBounds(271, 366, 69, 30);
+                      bt2.setBounds(575, 351, 69, 30);
                       pNorth.add(bt2);
                       Button bt3 = new Button("닫기");
-                      bt3.setBounds(352, 366, 51, 30);
+                      bt3.setBounds(675, 351, 51, 30);
                       pNorth.add(bt3);
                       
                       
@@ -223,7 +223,7 @@ public class foodGUI {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     show = bt[j].getActionCommand();
-                    ta.append(" " + show + "  " + price[j] + "  " + count + " " + price[j] * count+ "원" + "\n");
+                    ta.append(" " + show + "  " + price[j] + "  " + count + "\n");
                     ok[j].setEnabled(false);
                 }
             });
