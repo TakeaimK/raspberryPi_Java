@@ -22,6 +22,14 @@ public class foodGUI {
 
 	private JFrame frame;
 	private JTable table;
+	
+	int but1_cost=2000;
+	int but2_cost=3000;
+	int but3_cost=5000;
+	int but4_cost=7000;
+	int but5_cost=10000;
+	int but6_cost=12000;
+	int total_cost=0;	//RFID load data input
 
 	/**
 	 * Launch the application.
@@ -49,7 +57,7 @@ public class foodGUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	 public void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setForeground(new Color(255, 255, 255));
 		frame.getContentPane().setBackground(new Color(255, 250, 205));
@@ -57,13 +65,26 @@ public class foodGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		
+		JLabel costLabel = new JLabel("13,000");
+		costLabel.setForeground(new Color(0, 0, 0));
+		costLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		costLabel.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
+		costLabel.setBounds(306, 373, 152, 42);
+		costLabel.setText(total_cost+"");
+		frame.getContentPane().add(costLabel);
+		
+		
 		JButton button1 = new JButton("Button1");
 		button1.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button1.setBackground(new Color(255, 255, 224));
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				total_cost+=but1_cost;
+				costLabel.setText(total_cost+"");
 			}
 		});
+		
 		button1.setBounds(40, 70, 129, 132);
 		frame.getContentPane().add(button1);
 		
@@ -72,6 +93,8 @@ public class foodGUI {
 		button2.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				total_cost+=but2_cost;
+				costLabel.setText(total_cost+"");
 			}
 		});
 		button2.setBounds(181, 70, 129, 132);
@@ -82,6 +105,8 @@ public class foodGUI {
 		button3.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				total_cost+=but3_cost;
+				costLabel.setText(total_cost+"");
 			}
 		});
 		button3.setBounds(322, 70, 129, 132);
@@ -92,6 +117,8 @@ public class foodGUI {
 		button4.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				total_cost+=but4_cost;
+				costLabel.setText(total_cost+"");
 			}
 		});
 		button4.setBounds(40, 212, 129, 132);
@@ -102,6 +129,8 @@ public class foodGUI {
 		button5.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				total_cost+=but5_cost;
+				costLabel.setText(total_cost+"");
 			}
 		});
 		button5.setBounds(181, 212, 129, 132);
@@ -112,6 +141,8 @@ public class foodGUI {
 		button6.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.BOLD, 20));
 		button6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				total_cost+=but6_cost;
+				costLabel.setText(total_cost+"");
 			}
 		});
 		button6.setBounds(322, 212, 129, 132);
@@ -138,13 +169,6 @@ public class foodGUI {
 		lblUser.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
 		lblUser.setBounds(222, 373, 120, 42);
 		frame.getContentPane().add(lblUser);
-		
-		JLabel label = new JLabel("13,000");
-		label.setForeground(new Color(0, 0, 0));
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("³ª´®¼Õ±Û¾¾ Ææ", Font.PLAIN, 40));
-		label.setBounds(306, 373, 152, 42);
-		frame.getContentPane().add(label);
 		
 		JLabel label_1 = new JLabel("\\");
 		label_1.setForeground(new Color(0, 0, 0));
