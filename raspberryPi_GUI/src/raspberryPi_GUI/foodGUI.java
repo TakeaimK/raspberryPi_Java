@@ -26,7 +26,7 @@ public class foodGUI {
         // 디자인단
         // 프레임 설정단
         JFrame frame = new JFrame("햄버거 자동 판매기");
-        frame.setBounds(0, 0, 764, 487);
+        frame.setBounds(0, 0, 764, 450);
         frame.setBackground(Color.black);
  
         // 폰트
@@ -57,9 +57,9 @@ public class foodGUI {
             // 햄버거 버튼
             bt[i] = new JButton(menu[i]);
             if (i < 3) {
-                bt[i].setBounds(25 + i * 150, 50, 100, 100);
+                bt[i].setBounds(25 + i * 150, 50, 80, 80);
             } else {
-                bt[i].setBounds(25 + (i -3) * 150, 300, 100, 100);
+                bt[i].setBounds(25 + (i -3) * 150, 250, 80, 80);
             }
             icon[i] = new ImageIcon(i + ".png");
             bt[i].setIcon(icon[i]);
@@ -81,7 +81,7 @@ public class foodGUI {
             plus[i].setEnabled(false);
  
             // 가격
-            l[i] = new Label(price[i] + "원");
+            l[i] = new Label(price[i] +"");
             l[i].setBounds(bt[i].getX() + 20, suja[i].getY() - 25, 100, 20);
  
             // 확인 버튼
