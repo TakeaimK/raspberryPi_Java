@@ -23,6 +23,7 @@ public class foodGUI {
 	private JFrame frame;
 	private JTable table;
 	
+	//need variable
 	int but1_cost=2000;
 	int but2_cost=3000;
 	int but3_cost=5000;
