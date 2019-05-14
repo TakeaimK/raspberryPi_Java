@@ -64,7 +64,7 @@ public class foodGUI {
                 bt[i].setBounds(25 + (i -3) * 150, 230, 100, 80);
             }
             bt[i].setVerticalAlignment(SwingConstants.BOTTOM);
-            icon[i] = new ImageIcon(i + ".jpg");
+            icon[i] = new ImageIcon("images/icon/" + menu[i] + ".jpg");
             bt[i].setIcon(icon[i]);
  
             // 숫자 txt 버튼
