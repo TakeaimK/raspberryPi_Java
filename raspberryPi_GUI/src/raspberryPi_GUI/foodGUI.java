@@ -82,7 +82,7 @@ public class foodGUI {
  
             // 가격
             l[i] = new Label(price[i] +"");
-            l[i].setBounds(bt[i].getX() + 20, suja[i].getY() - 25, 100, 20);
+            l[i].setBounds(bt[i].getX() + 30, suja[i].getY() - 25, 100, 20);
  
             // 확인 버튼
             ok[i] = new JButton("확인");
