@@ -16,6 +16,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
  
 public class foodGUI {
     int count = 0;
@@ -41,7 +43,7 @@ public class foodGUI {
         pNorth.setFont(font);
  
         // 배열 설정 부분
-        String menu[] = { "빅맥버거", "싸이버거", "더블버거", "맘마버거", "김치버거", "새우버거"};
+        String menu[] = { "연어초밤", "광어초밥", "참치초밥", "장어초밥", "소고기초밥", "한치초밥"};
         int price[] = { 5000, 5500, 6000, 6500, 7000, 7500};
         JButton bt[] = new JButton[menu.length];
         TextField suja[] = new TextField[menu.length];
@@ -61,7 +63,7 @@ public class foodGUI {
             } else {
                 bt[i].setBounds(25 + (i -3) * 150, 230, 100, 80);
             }
-            icon[i] = new ImageIcon(i + ".png");
+            icon[i] = new ImageIcon(i + ".jpg");
             bt[i].setIcon(icon[i]);
  
             // 숫자 txt 버튼
@@ -127,6 +129,12 @@ public class foodGUI {
                       bt3.setFont(new Font("a전자시계", Font.PLAIN, 12));
                       bt3.setBounds(675, 351, 51, 30);
                       pNorth.add(bt3);
+                      
+                      JLabel lblWelcomeToSusi = new JLabel("Welcome to Susi Nara!");
+                      lblWelcomeToSusi.setHorizontalAlignment(SwingConstants.CENTER);
+                      lblWelcomeToSusi.setFont(new Font("Ink Free", Font.PLAIN, 20));
+                      lblWelcomeToSusi.setBounds(66, 10, 345, 15);
+                      pNorth.add(lblWelcomeToSusi);
                       
                       
                              //bt3 닫기버튼
@@ -246,7 +254,6 @@ public class foodGUI {
     public static void main(String[] args) {
         new foodGUI();
     }
- 
 }
 
 
