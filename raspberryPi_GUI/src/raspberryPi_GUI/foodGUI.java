@@ -43,7 +43,7 @@ public class foodGUI {
         pNorth.setFont(font);
  
         // 배열 설정 부분
-        String menu[] = { "연어초밤", "광어초밥", "참치초밥", "장어초밥", "소고기초밥", "한치초밥"};
+        String menu[] = { "연어초밥", "광어초밥", "참치초밥", "장어초밥", "소고기초밥", "한치초밥"};
         int price[] = { 5000, 5500, 6000, 6500, 7000, 7500};
         JButton bt[] = new JButton[menu.length];
         TextField suja[] = new TextField[menu.length];
@@ -63,6 +63,7 @@ public class foodGUI {
             } else {
                 bt[i].setBounds(25 + (i -3) * 150, 230, 100, 80);
             }
+            bt[i].setVerticalAlignment(SwingConstants.BOTTOM);
             icon[i] = new ImageIcon(i + ".jpg");
             bt[i].setIcon(icon[i]);
  
@@ -133,7 +134,7 @@ public class foodGUI {
                       JLabel lblWelcomeToSusi = new JLabel("Welcome to Susi Nara!");
                       lblWelcomeToSusi.setHorizontalAlignment(SwingConstants.CENTER);
                       lblWelcomeToSusi.setFont(new Font("Ink Free", Font.PLAIN, 20));
-                      lblWelcomeToSusi.setBounds(66, 10, 345, 15);
+                      lblWelcomeToSusi.setBounds(66, 10, 345, 30);
                       pNorth.add(lblWelcomeToSusi);
                       
                       
