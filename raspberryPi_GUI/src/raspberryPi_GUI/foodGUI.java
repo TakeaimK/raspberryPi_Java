@@ -57,9 +57,9 @@ public class foodGUI {
             // 햄버거 버튼
             bt[i] = new JButton(menu[i]);
             if (i < 3) {
-                bt[i].setBounds(25 + i * 150, 50, 80, 80);
+                bt[i].setBounds(25 + i * 150, 50, 100, 80);
             } else {
-                bt[i].setBounds(25 + (i -3) * 150, 250, 80, 80);
+                bt[i].setBounds(25 + (i -3) * 150, 230, 100, 80);
             }
             icon[i] = new ImageIcon(i + ".png");
             bt[i].setIcon(icon[i]);
@@ -68,7 +68,7 @@ public class foodGUI {
             suja[i] = new TextField("0");
             suja[i].setBackground(Color.white);
             suja[i].setEditable(false);
-            suja[i].setBounds(bt[i].getX() + 30, bt[i].getY() + 130, 40, 20);
+            suja[i].setBounds(bt[i].getX() + 30, bt[i].getY() + 110, 40, 20);
  
             // "-" 버튼
             minus[i] = new Button("-");
@@ -115,13 +115,16 @@ public class foodGUI {
                ta.setEditable(false);
                ta.setFont(new Font("Monospaced", Font.BOLD, 15));
                
-                      Button bt1 = new Button("주문");
+                      Button bt1 = new Button("Order");
+                      bt1.setFont(new Font("a전자시계", Font.PLAIN, 12));
                       bt1.setBounds(502, 351, 51, 30);
                       pNorth.add(bt1);
-                      Button bt2 = new Button("초기화");
+                      Button bt2 = new Button("Reset");
+                      bt2.setFont(new Font("a전자시계", Font.PLAIN, 12));
                       bt2.setBounds(575, 351, 69, 30);
                       pNorth.add(bt2);
-                      Button bt3 = new Button("닫기");
+                      Button bt3 = new Button("Exit");
+                      bt3.setFont(new Font("a전자시계", Font.PLAIN, 12));
                       bt3.setBounds(675, 351, 51, 30);
                       pNorth.add(bt3);
                       
