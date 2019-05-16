@@ -32,8 +32,8 @@ public class foodGUI {
         frame.setBackground(Color.black);
  
         // 폰트
-        Font font = new Font(Font.SANS_SERIF, Font.PLAIN, 15);
-        Font font1 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+        Font font = new Font("나눔고딕", Font.PLAIN, 15);
+        Font font1 = new Font("나눔고딕",Font.BOLD, 10);
  
         // 북쪽
         Panel pNorth = new Panel();
@@ -84,8 +84,9 @@ public class foodGUI {
             plus[i].setEnabled(false);
  
             // 가격
-            l[i] = new Label(price[i] +"");
-            l[i].setBounds(bt[i].getX() + 30, suja[i].getY() - 25, 100, 20);
+            l[i] = new Label(menu[i] + " "  + price[i] +"");
+            l[i].setFont(font1);
+            l[i].setBounds(bt[i].getX() + 10, suja[i].getY() - 25, 100, 20);
  
             // 확인 버튼
             ok[i] = new JButton("확인");
