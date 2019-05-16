@@ -27,13 +27,13 @@ public class foodGUI {
  
         // 디자인단
         // 프레임 설정단
-        JFrame frame = new JFrame("햄버거 자동 판매기");
+        JFrame frame = new JFrame("초밥 자동 판매기");
         frame.setBounds(0, 0, 764, 450);
         frame.setBackground(Color.black);
  
         // 폰트
         Font font = new Font("나눔고딕", Font.PLAIN, 15);
-        Font font1 = new Font("나눔고딕",Font.BOLD, 10);
+        //Font font1 = new Font("나눔고딕",Font.BOLD, 10);
  
         // 북쪽
         Panel pNorth = new Panel();
@@ -43,8 +43,8 @@ public class foodGUI {
         pNorth.setFont(font);
  
         // 배열 설정 부분
-        String menu[] = { "연어초밥", "광어초밥", "참치초밥", "장어초밥", "소고기초밥", "한치초밥"};
-        int price[] = { 5000, 5500, 6000, 6500, 7000, 7500};
+        String menu[] = { "salmon", "flatfish", "tuna", "eel", "beef", "cuttlefish"};
+        int price[] = { 3000, 2500, 3500, 3000, 2800, 2500};
         JButton bt[] = new JButton[menu.length];
         TextField suja[] = new TextField[menu.length];
         Button minus[] = new Button[menu.length];
@@ -56,7 +56,7 @@ public class foodGUI {
         // 버튼 설정 부분
         for (int i = 0; i < menu.length; i++) {
  
-            // 햄버거 버튼
+            // 초밥 버튼
             bt[i] = new JButton(menu[i]);
             if (i < 3) {
                 bt[i].setBounds(25 + i * 150, 50, 100, 80);
@@ -84,13 +84,13 @@ public class foodGUI {
             plus[i].setEnabled(false);
  
             // 가격
-            l[i] = new Label(menu[i] + " "  + price[i] +"");
-            l[i].setFont(font1);
-            l[i].setBounds(bt[i].getX() + 10, suja[i].getY() - 25, 100, 20);
+            l[i] = new Label(menu[i] +" "+ price[i] +"");
+            l[i].setFont(font);
+            l[i].setBounds(bt[i].getX() -1, suja[i].getY() - 18, 100, 20);
  
             // 확인 버튼
             ok[i] = new JButton("확인");
-            ok[i].setBounds(bt[i].getX(), suja[i].getY() + 30, 100, 20);
+            ok[i].setBounds(bt[i].getX(), suja[i].getY() + 20, 100, 20);
             ok[i].setEnabled(false);
  
             pNorth.add(bt[i]);
@@ -114,7 +114,7 @@ public class foodGUI {
                TextArea ta = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
                ta.setBounds(502, 28, 225, 250);
                pNorth.add(ta);
-               ta.setText(" 상품명  수량   합계\r\n\r\n");
+               ta.setText(" 상품명  합계    수량\r\n\r\n");
                ta.setBackground(Color.white);
                ta.setEditable(false);
                ta.setFont(new Font("Monospaced", Font.BOLD, 15));
