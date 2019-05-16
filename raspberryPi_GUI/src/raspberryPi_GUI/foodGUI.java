@@ -132,7 +132,7 @@ public class foodGUI {
                       bt3.setBounds(675, 351, 51, 30);
                       pNorth.add(bt3);
                       
-                      JLabel lblWelcomeToSusi = new JLabel("Welcome to Susi Nara!");
+                      JLabel lblWelcomeToSusi = new JLabel("Welcome to Sushi Nara!");
                       lblWelcomeToSusi.setHorizontalAlignment(SwingConstants.CENTER);
                       lblWelcomeToSusi.setFont(new Font("Ink Free", Font.PLAIN, 20));
                       lblWelcomeToSusi.setBounds(66, 10, 345, 30);
