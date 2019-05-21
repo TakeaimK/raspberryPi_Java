@@ -29,21 +29,20 @@ public class foodGUI {
         // 프레임 설정단
         JFrame frame = new JFrame("초밥 자동 판매기");
         frame.setBounds(0, 0, 764, 450);
-        frame.setBackground(Color.black);
+        frame.setBackground(Color.white);
  
         // 폰트
         Font font = new Font("나눔고딕", Font.PLAIN, 15);
-        //Font font1 = new Font("나눔고딕",Font.BOLD, 10);
  
         // 북쪽
         Panel pNorth = new Panel();
-        pNorth.setBackground(new Color(255, 255, 215));
+        pNorth.setBackground(new Color(0, 0, 0));
         pNorth.setLayout(null);
         pNorth.setSize(0, 500);
         pNorth.setFont(font);
  
         // 배열 설정 부분
-        String menu[] = { "salmon", "flatfish", "tuna", "eel", "beef", "cuttlefish"};
+        String menu[] = { "salmon", "flat", "tuna", "eel", "beef", "cuttle"};
         int price[] = { 3000, 2500, 3500, 3000, 2800, 2500};
         JButton bt[] = new JButton[menu.length];
         TextField suja[] = new TextField[menu.length];
@@ -71,7 +70,7 @@ public class foodGUI {
             suja[i] = new TextField("0");
             suja[i].setBackground(Color.white);
             suja[i].setEditable(false);
-            suja[i].setBounds(bt[i].getX() + 30, bt[i].getY() + 110, 40, 20);
+            suja[i].setBounds(bt[i].getX() + 30, bt[i].getY() + 100, 40, 20);
  
             // "-" 버튼
             minus[i] = new Button("-");
@@ -86,6 +85,7 @@ public class foodGUI {
             // 가격
             l[i] = new Label(menu[i] +" "+ price[i] +"");
             l[i].setFont(font);
+            l[i].setForeground(new Color(255, 255, 255));
             l[i].setBounds(bt[i].getX() -1, suja[i].getY() - 18, 100, 20);
  
             // 확인 버튼
@@ -103,8 +103,9 @@ public class foodGUI {
  
         // 남쪽
         Panel pSouth = new Panel();
+        pSouth.setForeground(new Color(255, 255, 255));
         pSouth.setFont(font);
-        pSouth.setBackground(new Color(255, 255, 215));
+        pSouth.setBackground(new Color(255, 255, 255));
  
  
         // 컴포넌트
@@ -114,7 +115,7 @@ public class foodGUI {
                TextArea ta = new TextArea("", 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
                ta.setBounds(502, 28, 225, 250);
                pNorth.add(ta);
-               ta.setText(" 상품명  합계    수량\r\n\r\n");
+               ta.setText("상품명    합계   수량\r\n\r\n");
                ta.setBackground(Color.white);
                ta.setEditable(false);
                ta.setFont(new Font("Monospaced", Font.BOLD, 15));
@@ -133,6 +134,7 @@ public class foodGUI {
                       pNorth.add(bt3);
                       
                       JLabel lblWelcomeToSusi = new JLabel("Welcome to Sushi Nara!");
+                      lblWelcomeToSusi.setForeground(new Color(255, 255, 255));
                       lblWelcomeToSusi.setHorizontalAlignment(SwingConstants.CENTER);
                       lblWelcomeToSusi.setFont(new Font("Ink Free", Font.PLAIN, 20));
                       lblWelcomeToSusi.setBounds(66, 10, 345, 30);
@@ -159,7 +161,7 @@ public class foodGUI {
                                          minus[i].setEnabled(false);
                                          plus[i].setEnabled(false);
                                          suja[i].setText("0");
-                                         ta.setText(" 상품명    수량    합계\n\n");
+                                         ta.setText("상품명    합계   수량\n\n");
                       
                                      }
                                  }
@@ -176,7 +178,7 @@ public class foodGUI {
                                          minus[i].setEnabled(false);
                                          plus[i].setEnabled(false);
                                          suja[i].setText("0");
-                                         ta.setText(" 상품명    수량    합계\n\n");
+                                         ta.setText("상품명    합계    수량\n\n");
                       
                                      }
                                  }
@@ -188,7 +190,7 @@ public class foodGUI {
         for (int i = 0; i < menu.length; i++) {
             int j = i;
  
-            // 햄버그 버튼 이벤트
+            // 초밥 버튼 이벤트
             bt[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
