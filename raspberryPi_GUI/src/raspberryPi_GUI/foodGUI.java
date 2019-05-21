@@ -31,84 +31,84 @@ public class foodGUI {
     String a = "";
  
     void socket(String a) {
-    	Socket socket = null;
-		
-		try{
+       Socket socket = null;
+      
+      try{
 
-			socket = new Socket();
+         socket = new Socket();
 
-			System.out.println("[[Connecting]]");
+         System.out.println("[[Connecting]]");
 
-			socket.connect(new InetSocketAddress("192.168.10.18", 8888));
+         socket.connect(new InetSocketAddress("192.168.10.18", 8888));
 
-			System.out.println("[[Connected]]");
+         System.out.println("[[Connected]]");
 
-			byte[] bytes = null;
-	
-			String message = null;
+         byte[] bytes = null;
+   
+         String message = null;
 
 //Tag Throwing
 
-			OutputStream os = socket.getOutputStream();
+         OutputStream os = socket.getOutputStream();
 
-			/*
-			Scanner scan = new Scanner(System.in);
+         /*
+         Scanner scan = new Scanner(System.in);
 
-			message = scan.nextLine();//Tag Num...
+         message = scan.nextLine();//Tag Num...
 */
-			message = "RFIDTag\n";
-			bytes = message.getBytes("UTF-8");
+         message = "RFIDTag\n";
+         bytes = message.getBytes("UTF-8");
 
-			os.write(bytes);
+         os.write(bytes);
 
-			os.flush();
-	
-			System.out.println("[[TagNum Throwing Success]]");
+         os.flush();
+   
+         System.out.println("[[TagNum Throwing Success]]");
 
 
 //Menu Throwing
 
-			message = a;
+         message = a;
 
-			bytes = message.getBytes("UTF-8");
+         bytes = message.getBytes("UTF-8");
 
-			os.write(bytes);
+         os.write(bytes);
 
-			os.flush();
-	
-			System.out.println("[[Menu Throwing Success]]");
+         os.flush();
+   
+         System.out.println("[[Menu Throwing Success]]");
 
-			InputStream is = socket.getInputStream();
+         InputStream is = socket.getInputStream();
 
 
-			
+         
 //bytes = new byte[100];
 
-			//int readByteCount = is.read(bytes);
+         //int readByteCount = is.read(bytes);
 
-			//message = new String(bytes, 0, readByteCount, "UTF-8");
-						//System.out.println("[[Data receving Success]]" + message);
+         //message = new String(bytes, 0, readByteCount, "UTF-8");
+                  //System.out.println("[[Data receving Success]]" + message);
 
-			os.close();
+         os.close();
 
-			is.close();
-	
-	}catch(Exception e) {}
+         is.close();
+   
+   }catch(Exception e) {}
 
 
-	if(!socket.isClosed()){
+   if(!socket.isClosed()){
 
-			try{
+         try{
 
-				socket.close();
+            socket.close();
 
-			}catch(IOException e1) {}
+         }catch(IOException e1) {}
 
-		}
+      }
 
-		
-	
-	}
+      
+   
+   }
     
     
     //Food
@@ -267,6 +267,10 @@ public class foodGUI {
                       
                                  @Override
                                  public void actionPerformed(ActionEvent e) {
+
+         
+                                     socket(a);
+                                     a = "";
                                      JOptionPane.showMessageDialog(null, ta.getText() + " 주문되었습니다. \n이용해주셔서 감사합니다.");
                                      for (int i = 0; i < menu.length; i++) {
                                          bt[i].setEnabled(true);
@@ -332,11 +336,10 @@ public class foodGUI {
  
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                	show = bt[j].getActionCommand();
+                   show = bt[j].getActionCommand();
                     ta.append(" " + show + "  " + price[j] + "  " + count + "\n");
-                    a = " " + show + "  " + price[j] + "  " + count + "\n"; 
-                    System.out.println(a);
-                    socket(a);
+                    a = a + " " + show + "  " + price[j] + "  " + count + "\n"; 
+                    //System.out.println(a);
                     ok[j].setEnabled(false);
                 }
             });
@@ -357,5 +360,3 @@ public class foodGUI {
         new foodGUI();
     }
 }
-
-
