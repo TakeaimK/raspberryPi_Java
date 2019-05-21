@@ -164,11 +164,13 @@ public class foodGUI {
             // "-" 버튼
             minus[i] = new Button("-");
             minus[i].setBounds(bt[i].getX(), suja[i].getY(), 20, 20);
+            minus[i].setForeground(new Color(255,255,255));
             minus[i].setEnabled(false);
  
             // "+" 버튼
             plus[i] = new Button("+");
             plus[i].setBounds(bt[i].getX() + (100 - 20), suja[i].getY(), 20, 20);
+            plus[i].setForeground(new Color(255,255,255));
             plus[i].setEnabled(false);
  
             // 가격
@@ -180,6 +182,7 @@ public class foodGUI {
             // 확인 버튼
             ok[i] = new JButton("확인");
             ok[i].setBounds(bt[i].getX(), suja[i].getY() + 20, 100, 20);
+            ok[i].setForeground(new Color(255,255,255));
             ok[i].setEnabled(false);
  
             pNorth.add(bt[i]);
@@ -211,14 +214,17 @@ public class foodGUI {
                
                       Button bt1 = new Button("Order");
                       bt1.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
+                      bt1.setForeground(new Color(255,255,255));
                       bt1.setBounds(502, 351, 51, 30);
                       pNorth.add(bt1);
                       Button bt2 = new Button("Reset");
                       bt2.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
+                      bt2.setForeground(new Color(255,255,255));
                       bt2.setBounds(575, 351, 69, 30);
                       pNorth.add(bt2);
                       Button bt3 = new Button("Exit");
                       bt3.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
+                      bt3.setForeground(new Color(255,255,255));
                       bt3.setBounds(675, 351, 51, 30);
                       pNorth.add(bt3);
                       
