@@ -39,7 +39,7 @@ public class foodGUI {
         pNorth.setBackground(new Color(0, 0, 0));
         pNorth.setLayout(null);
         pNorth.setSize(0, 500);
-        pNorth.setFont(font);
+        pNorth.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 15));
  
         // 배열 설정 부분
         String menu[] = { "salmon", "flat", "tuna", "eel", "beef", "cuttle"};
@@ -121,22 +121,22 @@ public class foodGUI {
                ta.setFont(new Font("Monospaced", Font.BOLD, 15));
                
                       Button bt1 = new Button("Order");
-                      bt1.setFont(new Font("a전자시계", Font.PLAIN, 12));
+                      bt1.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
                       bt1.setBounds(502, 351, 51, 30);
                       pNorth.add(bt1);
                       Button bt2 = new Button("Reset");
-                      bt2.setFont(new Font("a전자시계", Font.PLAIN, 12));
+                      bt2.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
                       bt2.setBounds(575, 351, 69, 30);
                       pNorth.add(bt2);
                       Button bt3 = new Button("Exit");
-                      bt3.setFont(new Font("a전자시계", Font.PLAIN, 12));
+                      bt3.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
                       bt3.setBounds(675, 351, 51, 30);
                       pNorth.add(bt3);
                       
                       JLabel lblWelcomeToSusi = new JLabel("Welcome to Sushi Nara!");
                       lblWelcomeToSusi.setForeground(new Color(255, 255, 255));
                       lblWelcomeToSusi.setHorizontalAlignment(SwingConstants.CENTER);
-                      lblWelcomeToSusi.setFont(new Font("Ink Free", Font.PLAIN, 20));
+                      lblWelcomeToSusi.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 24));
                       lblWelcomeToSusi.setBounds(66, 10, 345, 30);
                       pNorth.add(lblWelcomeToSusi);
                       
