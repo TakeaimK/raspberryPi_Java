@@ -18,100 +18,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.util.Scanner;
-
+ 
 public class foodGUI {
     int count = 0;
     String show = "";
-    String a = "";
+    
  
-    void socket(String a) {
-    	Socket socket = null;
-		
-		try{
-
-			socket = new Socket();
-
-			System.out.println("[[Connecting]]");
-
-			socket.connect(new InetSocketAddress("192.168.10.18", 8888));
-
-			System.out.println("[[Connected]]");
-
-			byte[] bytes = null;
-	
-			String message = null;
-
-//Tag Throwing
-
-			OutputStream os = socket.getOutputStream();
-
-			/*
-			Scanner scan = new Scanner(System.in);
-
-			message = scan.nextLine();//Tag Num...
-*/
-			message = "RFIDTag\n";
-			bytes = message.getBytes("UTF-8");
-
-			os.write(bytes);
-
-			os.flush();
-	
-			System.out.println("[[TagNum Throwing Success]]");
-
-
-//Menu Throwing
-
-			message = a;
-
-			bytes = message.getBytes("UTF-8");
-
-			os.write(bytes);
-
-			os.flush();
-	
-			System.out.println("[[Menu Throwing Success]]");
-
-			InputStream is = socket.getInputStream();
-
-
-			
-//bytes = new byte[100];
-
-			//int readByteCount = is.read(bytes);
-
-			//message = new String(bytes, 0, readByteCount, "UTF-8");
-						//System.out.println("[[Data receving Success]]" + message);
-
-			os.close();
-
-			is.close();
-	
-	}catch(Exception e) {}
-
-
-	if(!socket.isClosed()){
-
-			try{
-
-				socket.close();
-
-			}catch(IOException e1) {}
-
-		}
-
-		
-	
-	}
-    
-    
-    //Food
     public foodGUI() {
  
         // 디자인단
@@ -326,11 +238,8 @@ public class foodGUI {
  
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                	show = bt[j].getActionCommand();
+                    show = bt[j].getActionCommand();
                     ta.append(" " + show + "  " + price[j] + "  " + count + "\n");
-                    a = " " + show + "  " + price[j] + "  " + count + "\n"; 
-                    System.out.println(a);
-                    socket(a);
                     ok[j].setEnabled(false);
                 }
             });
