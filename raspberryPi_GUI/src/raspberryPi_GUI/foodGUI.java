@@ -29,6 +29,7 @@ public class foodGUI {
     int count = 0;
     String show = "";
     String a = "";
+    String user = "User1";
  
     void socket(String a) {
        Socket socket = null;
@@ -56,9 +57,9 @@ public class foodGUI {
 
          message = scan.nextLine();//Tag Num...
 */
-         message = "RFIDTag\n";
+         message = user+"\n";
+         System.out.println("message : " + message);
          bytes = message.getBytes("UTF-8");
-
          os.write(bytes);
 
          os.flush();
@@ -158,18 +159,19 @@ public class foodGUI {
             // 숫자 txt 버튼
             suja[i] = new TextField("0");
             suja[i].setBackground(Color.white);
+            suja[i].setFont(new Font("나눔고딕", Font.PLAIN, 20));
             suja[i].setEditable(false);
-            suja[i].setBounds(bt[i].getX() + 30, bt[i].getY() + 100, 40, 20);
+            suja[i].setBounds(bt[i].getX() + 30, bt[i].getY() + 100, 40, 30);
  
             // "-" 버튼
             minus[i] = new Button("-");
-            minus[i].setBounds(bt[i].getX(), suja[i].getY(), 20, 20);
+            minus[i].setBounds(bt[i].getX(), suja[i].getY(), 30, 30);
             minus[i].setForeground(new Color(255,255,255));
             minus[i].setEnabled(false);
  
             // "+" 버튼
             plus[i] = new Button("+");
-            plus[i].setBounds(bt[i].getX() + (100 - 20), suja[i].getY(), 20, 20);
+            plus[i].setBounds(bt[i].getX() + (100 - 20), suja[i].getY(), 30, 30);
             plus[i].setForeground(new Color(255,255,255));
             plus[i].setEnabled(false);
  
@@ -181,7 +183,7 @@ public class foodGUI {
  
             // 확인 버튼
             ok[i] = new JButton("확인");
-            ok[i].setBounds(bt[i].getX(), suja[i].getY() + 20, 100, 20);
+            ok[i].setBounds(bt[i].getX(), suja[i].getY()+40, 110, 20);
             ok[i].setForeground(new Color(255,255,255));
             ok[i].setEnabled(false);
  
@@ -215,17 +217,17 @@ public class foodGUI {
                       Button bt1 = new Button("Order");
                       bt1.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
                       bt1.setForeground(new Color(255,255,255));
-                      bt1.setBounds(502, 351, 51, 30);
+                      bt1.setBounds(502, 351, 101, 43);
                       pNorth.add(bt1);
                       Button bt2 = new Button("Reset");
                       bt2.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
                       bt2.setForeground(new Color(255,255,255));
-                      bt2.setBounds(575, 351, 69, 30);
+                      bt2.setBounds(609, 364, 60, 30);
                       pNorth.add(bt2);
                       Button bt3 = new Button("Exit");
                       bt3.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 12));
                       bt3.setForeground(new Color(255,255,255));
-                      bt3.setBounds(675, 351, 51, 30);
+                      bt3.setBounds(675, 364, 60, 30);
                       pNorth.add(bt3);
                       
                       JLabel lblWelcomeToSusi = new JLabel("Welcome to Sushi Nara!");
@@ -234,6 +236,39 @@ public class foodGUI {
                       lblWelcomeToSusi.setFont(new Font("나눔손글씨 펜", Font.PLAIN, 24));
                       lblWelcomeToSusi.setBounds(66, 10, 345, 30);
                       pNorth.add(lblWelcomeToSusi);
+                      
+                      JButton btnUser1 = new JButton("User 1");
+                      btnUser1.setFont(new Font("나눔고딕", Font.PLAIN, 10));
+                      btnUser1.addActionListener(new ActionListener() {
+                      	public void actionPerformed(ActionEvent arg0) {
+                      		user="User1";
+                      		System.out.println("User : " + user);
+                      	}
+                      });
+                      btnUser1.setBounds(500, 300, 70, 30);
+                      pNorth.add(btnUser1);
+                      
+                      JButton btnUser2 = new JButton("User 2");
+                      btnUser2.setFont(new Font("나눔고딕", Font.PLAIN, 10));
+                      btnUser2.addActionListener(new ActionListener() {
+                      	public void actionPerformed(ActionEvent arg0) {
+                      		user="User2";
+                      		System.out.println("User : " + user);
+                      	}
+                      });
+                      btnUser2.setBounds(575, 300, 70, 30);
+                      pNorth.add(btnUser2);
+                      
+                      JButton btnUser3 = new JButton("User 3");
+                      btnUser3.setFont(new Font("나눔고딕", Font.PLAIN, 10));
+                      btnUser3.addActionListener(new ActionListener() {
+                      	public void actionPerformed(ActionEvent arg0) {
+                      		user="User3";
+                      		System.out.println("User : " + user);
+                      	}
+                      });
+                      btnUser3.setBounds(650, 300, 70, 30);
+                      pNorth.add(btnUser3);
                       
                       
                              //bt3 닫기버튼
@@ -310,6 +345,7 @@ public class foodGUI {
                     if (count > 0) {
                         count = count - 1;
                         suja[j].setText(count + "");
+                        suja[j].setFont(new Font("나눔고딕", Font.PLAIN, 13));
                         ok[j].setEnabled(true);
                     } else {
                         minus[j].setEnabled(false);
